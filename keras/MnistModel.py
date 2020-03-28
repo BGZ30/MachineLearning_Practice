@@ -14,7 +14,7 @@ from keras.layers import Dense
 from keras.utils import to_categorical
 
 
-training_set, validation_set, testing_set = mnist.data()
+training_set, testing_set = mnist.data()
 
 train_Images = training_set[0]
 train_Lables = training_set[1]
@@ -42,6 +42,12 @@ model.fit(
     to_categorical(train_Lables),
     epochs = 5,
     batch_size = 32
+)
+
+# Evaluate the model.
+model.evaluate(
+  test_Images,
+  to_categorical(test_Lables)
 )
 
 # save the model
