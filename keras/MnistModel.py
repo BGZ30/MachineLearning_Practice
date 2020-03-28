@@ -43,3 +43,6 @@ model.fit(
     epochs = 5,
     batch_size = 32
 )
+
+# save the model
+model.save_weights('model.h5')
